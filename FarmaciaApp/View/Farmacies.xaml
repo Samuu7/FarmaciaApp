@@ -1,0 +1,48 @@
+﻿<Window x:Class="FarmaciaApp.View.Farmacies"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FarmaciaApp.View"
+        mc:Ignorable="d"
+        Title="Farmacies" Height="450" Width="800" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="37*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="219*"/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="182*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="LlistaDeFarmacies" HorizontalAlignment="Center" BorderBrush="Black" Width="175" Grid.RowSpan="6" Margin="0,45,0,0" SelectionChanged="LlistaDeFarmacies_SelectionChanged">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label  Content="{Binding Nom}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Border Background="LightGray" BorderThickness="1" BorderBrush="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="175">
+            <Label Content="Llista Farmacies" HorizontalContentAlignment="Center" Margin="0,-3,0,-1" FontWeight="Bold"/>
+        </Border>
+        <Label Content="Nom:" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1"/>
+        <Label Content="Carrer:" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="1" Margin="0,0,0,50" Grid.RowSpan="2"/>
+        <Label Content="Telèfon:" HorizontalAlignment="Right" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" RenderTransformOrigin="0.577,0.333" Margin="0,0,5,54" Grid.RowSpan="2"/>
+        <TextBox Name="tbNom" MaxLength="40" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" />
+        <TextBox Name="tbCarrer" MaxLength="60" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="2" Grid.Row="1"/>
+        <TextBox Name="tbTel" MaxLength="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="120" Grid.Column="1" Grid.Row="2" Margin="159,0,0,4" Grid.ColumnSpan="2"/>
+        <Button Name="BotoAfegir" Content="Afegir" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="26" Width="75" Grid.Column="2" Grid.Row="3" Click="BotoAfegir_Click" Margin="71,0,0,46" Grid.RowSpan="2"/>
+        <Button Name="BotoModificar" Content="Modificar" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="26" Width="75" Grid.Column="1" Grid.Row="3" Click="BotoModificar_Click" Margin="103,0,0,46" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+        <Button Name="BotoEliminar" Content="Eliminar" HorizontalAlignment="Center" Width="76" Height="25" Grid.Row="6" VerticalAlignment="Center" Click="BotoEliminar_Click"/>
+        <Label Content="*" Grid.Column="2" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Bottom" Foreground="Red"/>
+        <Label Content="*" Grid.Column="2"  Grid.Row="2" HorizontalAlignment="Left" Margin="120,0,0,0" VerticalAlignment="Bottom" Foreground="Red"/>
+    </Grid>
+</Window>

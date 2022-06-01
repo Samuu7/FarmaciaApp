@@ -1,0 +1,19 @@
+﻿<Application x:Class="FarmaciaApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:FarmaciaApp"
+             StartupUri="View/Principal.xaml">
+    <Application.Resources>
+        <Style TargetType="Grid" x:Key="FormBackground">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFE5FFE6" Offset="0"/>
+                        <GradientStop Color="White" Offset="0.267"/>
+                        <GradientStop Color="#FFEDECFF" Offset="1"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Application.Resources>
+</Application>

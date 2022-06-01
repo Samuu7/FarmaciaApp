@@ -1,0 +1,44 @@
+﻿<Window x:Class="FarmaciaApp.FinestraProducte"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:FarmaciaApp"
+        mc:Ignorable="d"
+        Title="Producte" Height="450" Width="800" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="4*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="150*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="50*" />
+            <RowDefinition Height="150*" />
+        </Grid.RowDefinitions>
+        <Label VerticalAlignment="Top" Margin="10,29,169,0" Height="26">Producte:</Label>
+        <TextBox Name="tbNom" Text="{Binding Titol}" Margin="110,7,40,10"   Height="18" MaxLength="20" Grid.ColumnSpan="2"/>
+        <Label Grid.Row="1" Margin="10,0,160,0">Descripció:</Label>
+        <TextBox Name="tbDescripcio" Text="{Binding Descripcio}" Grid.Row="1" Grid.ColumnSpan="3" Margin="110,7,40,10" TextWrapping = "Wrap" MaxLength="150" />
+        <Label Grid.Row="2" VerticalAlignment="Center" Margin="10,0,160,0">Data Creació:</Label>
+        <DatePicker Name="tbDCreacio"  SelectedDate="{Binding data, FallbackValue={x:Static sys:DateTime.Today}, Mode=Default}" Grid.Row="2" VerticalAlignment="Center" Margin="110,0,0,0" SelectedDateFormat="Short"></DatePicker>
+        <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,430,0">Farmàcia:</Label>
+        <ListBox Name="lbRepresentant"  Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Width="130" Height="130"  Margin="68,9,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Label  Content="{Binding Nom}"></Label>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Margin="10,4,533,0" Grid.ColumnSpan="2">Stock:</Label>
+        <TextBox Name="tbStock" Grid.Row="3" Grid.Column="0" Text="{Binding stock}" Margin="110,7,10,13"/>
+        <Button Name="btnFinalitzarTasca" Grid.Row="4" Grid.Column="1" Margin="314,32,56,68" Click="Button_Click">Guardar</Button>
+    </Grid>
+
+</Window>
