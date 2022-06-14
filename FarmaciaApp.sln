@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31702.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FarmaciaApp", "FarmaciaApp\FarmaciaApp.csproj", "{04956E2F-2ECC-4E5E-B9C6-DC57B72F3E8D}"
 EndProject
-Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupFarm", "SetupFarm\SetupFarm.vdproj", "{CD9342FC-D078-4E9A-B134-80D5901FC814}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupFarmApp", "SetupFarmApp\SetupFarmApp.vdproj", "{1763C261-CC9D-4D11-913B-6A9C58A20CC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,8 @@ Global
 		{04956E2F-2ECC-4E5E-B9C6-DC57B72F3E8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04956E2F-2ECC-4E5E-B9C6-DC57B72F3E8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04956E2F-2ECC-4E5E-B9C6-DC57B72F3E8D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD9342FC-D078-4E9A-B134-80D5901FC814}.Debug|Any CPU.ActiveCfg = Debug
-		{CD9342FC-D078-4E9A-B134-80D5901FC814}.Release|Any CPU.ActiveCfg = Release
+		{1763C261-CC9D-4D11-913B-6A9C58A20CC1}.Debug|Any CPU.ActiveCfg = Debug
+		{1763C261-CC9D-4D11-913B-6A9C58A20CC1}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,6 +6,8 @@ using FarmaciaApp.API;
 using System.Linq;
 using MongoDB.Bson;
 using MongoExample.Entity;
+using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace FarmaciaApp
 {
@@ -34,7 +36,7 @@ namespace FarmaciaApp
         //Afegir producte
         private async void Button_Click(object sender, RoutedEventArgs e)
         {   
-            if(tbNom.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null  && lbRepresentant.SelectedItem != null)
+            if(tbNom.Text != "" && tbDescripcio.Text != "" && tbDCreacio.SelectedDate != null  && lbRepresentant.SelectedItem != null && tbStock.Text != "")
             {
                 Producte productes = new Producte();
                 productes.Name = tbNom.Text;
@@ -46,29 +48,28 @@ namespace FarmaciaApp
                 productes.Representant = t1.Nom;
 
                 ApiProducte TAPI = new ApiProducte();
-/*
-              if (tbNom.Text == "")
-                {
 
-                  
-                    await TAPI.AddAsync(productes);
-                    Close();
-                }
-                else
-                {
+                /* if (tbNom.Text == "")
+                    {
+                       
+                        await TAPI.AddAsync(productes);
+                        Close();
+                    }
+                    else
+                    {
+                        productes.id = tbCodi.Text;
+                        await TAPI.AddAsync(productes);
+                        await TAPI.UpdateAsync(productes);
                     
-                    productes.id = tbNom.Text;
-                    await TAPI.UpdateAsync(productes);
                     Close();
+                   }*/
 
-               }
-                */
-                     productes.Name = tbNom.Text;
-                    await TAPI.AddAsync(productes);
-                    await TAPI.UpdateAsync(productes);
-                    Close();
+                productes.Name = tbNom.Text;
+                await TAPI.AddAsync(productes); 
+                await TAPI.UpdateAsync(productes);
+                Close();
                 
-
+               
             }
             else
             {
@@ -76,6 +77,22 @@ namespace FarmaciaApp
             }
             
         }
+
+       /* private void tbStock_KeyPress(object sender, KeyEventArgs e)
+        {
+            if (!char.IsControl(e.key) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+
+        }*/
 
 
         //Modificar Producte

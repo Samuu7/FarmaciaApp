@@ -47,10 +47,6 @@ namespace FarmaciaApp.API
             return farmacies;
         }
 
-        internal Task<Producte> GetProducteAsync(string id)
-        {
-            throw new NotImplementedException();
-        }
 
         //GET Farmacies
         public async Task<Farmacia> GetFarmaciaAsync(String Id)

@@ -20,14 +20,16 @@
             <RowDefinition Height="50*" />
             <RowDefinition Height="150*" />
         </Grid.RowDefinitions>
+        <Image Name="Background" Source="/Images/FarmIcon.jpg" Stretch="Uniform" Grid.ColumnSpan="2" Margin="266,43,266,0" Grid.Row="4" />
         <Label VerticalAlignment="Top" Margin="10,29,169,0" Height="26">Producte:</Label>
         <TextBox Name="tbNom" Text="{Binding Titol}" Margin="110,7,40,10"   Height="18" MaxLength="20" Grid.ColumnSpan="2"/>
+        <TextBox Name="tbCodi" Text="{Binding id}" VerticalAlignment="Top"  Margin="110,59,50,0" Height="18" IsEnabled="False" Visibility="Hidden"/>
         <Label Grid.Row="1" Margin="10,0,160,0">Descripció:</Label>
         <TextBox Name="tbDescripcio" Text="{Binding Descripcio}" Grid.Row="1" Grid.ColumnSpan="3" Margin="110,7,40,10" TextWrapping = "Wrap" MaxLength="150" />
-        <Label Grid.Row="2" VerticalAlignment="Center" Margin="10,0,160,0">Data Creació:</Label>
-        <DatePicker Name="tbDCreacio"  SelectedDate="{Binding data, FallbackValue={x:Static sys:DateTime.Today}, Mode=Default}" Grid.Row="2" VerticalAlignment="Center" Margin="110,0,0,0" SelectedDateFormat="Short"></DatePicker>
-        <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="10,0,430,0">Farmàcia:</Label>
-        <ListBox Name="lbRepresentant"  Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Width="130" Height="130"  Margin="68,9,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+        <Label Grid.Row="3" VerticalAlignment="Center" Margin="10,0,160,0">Data Creació:</Label>
+        <DatePicker Name="tbDCreacio"  SelectedDate="{Binding data, FallbackValue={x:Static sys:DateTime.Today}, Mode=Default}" Grid.Row="3" VerticalAlignment="Center" Margin="100,0,10,0" SelectedDateFormat="Short"></DatePicker>
+        <Label Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Margin="168,22,271,0" Grid.RowSpan="2">Farmàcia:</Label>
+        <ListBox Name="lbRepresentant"  Grid.Row="2" Grid.Column="1" Grid.RowSpan="3" Width="264" Height="167"  Margin="229,22,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -36,9 +38,9 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Label Grid.Row="3" Grid.Column="0" VerticalAlignment="Top" Margin="10,4,533,0" Grid.ColumnSpan="2">Stock:</Label>
-        <TextBox Name="tbStock" Grid.Row="3" Grid.Column="0" Text="{Binding stock}" Margin="110,7,10,13"/>
-        <Button Name="btnFinalitzarTasca" Grid.Row="4" Grid.Column="1" Margin="314,32,56,68" Click="Button_Click">Guardar</Button>
+        <Label Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="10,0,533,0" Grid.ColumnSpan="2">Stock:</Label>
+        <TextBox Name="tbStock" Grid.Row="2" Grid.Column="0" Text="{Binding Stock}" Margin="100,10,10,10"/>
+        <Button Name="btnFinalitzarTasca" Grid.Row="4" Margin="82,50,22,50" Click="Button_Click">Guardar</Button>
     </Grid>
 
 </Window>

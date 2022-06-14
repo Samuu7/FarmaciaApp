@@ -80,7 +80,7 @@ namespace FarmaciaApp.View
             }
             else
             {
-                if (tbNom.Text != "" && tbNom.Text != "")
+                if (tbNom.Text != "" && tbTel.Text != "" && tbCarrer.Text !="")
                 {
                     Farmacia MongoCodi = (Farmacia)LlistaDeFarmacies.SelectedItem;
                     Farmacia farmacia = new Farmacia
@@ -107,7 +107,7 @@ namespace FarmaciaApp.View
                 }
                 else
                 {
-                    MessageBox.Show("Els camps marcats amb * son obligatoris", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("Tots els camps son obligatoris", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
@@ -116,7 +116,7 @@ namespace FarmaciaApp.View
         private async void BotoAfegir_Click(object sender, RoutedEventArgs e)
         {
             ApiFarmacia TAPI = new ApiFarmacia();
-            if (tbNom.Text != "" && tbNom.Text != "")
+            if (tbNom.Text != "" && tbTel.Text != "" && tbCarrer.Text != "")
             {
                 Farmacia farmacies = new Farmacia
                 {
@@ -138,8 +138,9 @@ namespace FarmaciaApp.View
             }
             else
             {
-                MessageBox.Show("Els camps marcats amb * son obligatoris", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Tots els camps son obligatoris", "Informació", MessageBoxButton.OK, MessageBoxImage.Information);
             }
+            
         }
     }
 }

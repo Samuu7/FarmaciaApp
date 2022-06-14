@@ -6,18 +6,32 @@
         xmlns:local="clr-namespace:FarmaciaApp.View"
         mc:Ignorable="d"
         Title="Principal" Height="550" Width="900" ResizeMode="NoResize" ContentRendered="Window_ContentRendered">
+    
     <Window.Resources>
         <Style TargetType="ListBox">
             <Setter Property="Background">
                 <Setter.Value>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFD9D9D9" Offset="1"/>
+                        <GradientStop Color="#CAFFFD" Offset="1"/>
                         <GradientStop Color="White" Offset="0"/>
                     </LinearGradientBrush>
                 </Setter.Value>
             </Setter>
         </Style>
+
+        <Style TargetType="TreeView">
+            <Setter Property="Background">
+                <Setter.Value>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="1"/>
+                        <GradientStop Color="#CAFFFD" Offset="0"/>
+                    </LinearGradientBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
+
+    
     <Grid Style="{StaticResource FormBackground}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*" />
@@ -37,7 +51,7 @@
             <RowDefinition Height="240*"/>
 
         </Grid.RowDefinitions>
-        <ListBox Grid.Row="2" x:Name="LlistatProductes" BorderBrush="Black" Grid.RowSpan="2" GotFocus="Llista_GotFocus"  PreviewMouseDoubleClick="Llista_PreviewMouseDoubleClick"  Grid.ColumnSpan="4" Margin="18,0,288,0" Height="477" VerticalAlignment="Top">
+        <ListBox Grid.Row="2" x:Name="LlistatProductes" BorderBrush="Black" Grid.RowSpan="2" GotFocus="Llista_GotFocus"  PreviewMouseDoubleClick="Llista_PreviewMouseDoubleClick"  Grid.ColumnSpan="4" Margin="18,0,288,0" Height="447" VerticalAlignment="Top">
             <ListBox.Resources>
                 <Style TargetType="ListBoxItem">
                     <Style.Triggers>
@@ -48,9 +62,8 @@
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Name="StackDoing">
-                        <TreeView Width="250">
+                        <TreeView Width="525">
                             <TreeViewItem Header="{Binding Titol}" IsExpanded="True">
-                                <TreeViewItem Header="{Binding id}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Name}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Descripcio}" FontSize="13"></TreeViewItem>
                                 <TreeViewItem Header="{Binding Data}" FontSize="13"></TreeViewItem>
@@ -67,18 +80,19 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <Button Grid.Row="2" Grid.Column="3" x:Name="BotoAfegirTasca" Content="Afegir Producte" Margin="28,53,30,120"  Click="BotoAfegirTasca_Click">
+        <Button Grid.Row="2" Grid.Column="3" x:Name="BotoAfegirTasca" Content="Productes" Margin="28,53,30,120"  Click="BotoAfegirTasca_Click" FontWeight="Bold" FontStyle="Italic">
 
         </Button>
-        <Button Grid.Row="2" Grid.Column="3" Content="Farmàcies" x:Name="BotoFarmacies"  Margin="29,163,29,10"  Click="BotoFarmacies_Click">
+        <Button Content="Farmàcies" Grid.Row="2" Grid.Column="3" x:Name="BotoFarmacies"  Margin="29,163,29,10"  Click="BotoFarmacies_Click" FontWeight="Bold" FontStyle="Italic">
+
 
         </Button>
-        <Button Grid.Row="3" Grid.Column="3" x:Name="BotoActualitzar" Content="Actualitzar" Margin="26,62,30,151" Click="BotoActualitzar_Click">
+        <Button Grid.Row="3" Grid.Column="3" x:Name="BotoActualitzar" Content="Actualitzar" Margin="26,62,30,151" Click="BotoActualitzar_Click" FontWeight="Bold" FontStyle="Italic">
 
         </Button>
 
 
 
-        <Label Name="lbl_productes" Background="LightGray" BorderThickness="1" BorderBrush="Black"  Content="                                 Productes" FontWeight="Bold" Grid.ColumnSpan="2" Margin="18,12,1,3" Grid.RowSpan="2" />
+        <Label Name="lbl_productes" Background="LightGray" BorderThickness="1" BorderBrush="Black"  Content="                                    Llistat" FontWeight="Bold" Grid.ColumnSpan="2" Margin="142,12,142,4" Grid.RowSpan="2" Grid.Column="1" FontStyle="Italic" />
     </Grid>
 </Window>
